@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	
+</head>
+<body>
+{% for ag in agendas %}
+	<a> {{ag.fecha}}  </a><br />
+	
+	{% endfor %}
+	
+</body>
+
+
+
+
+</html>

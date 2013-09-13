@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>formulario</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Emiliano Martin" />
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>Formulario</h1>
+			</header>
+
+			<section id="contenido">
+				<form method="post">
+					<div id="form">
+						{% csrf_token %}
+						{{form.as_p}}
+
+						<input type="submit">
+						<form>
+					</div>
+			</section>
+
+			<footer>
+				<p>
+					&copy; Copyright  by Emiliano Martin
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
+

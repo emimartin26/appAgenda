@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	
+</head>
+<body>
+	<h1>{{agenda}}</h1>
+	<br />
+	<br /><br /><br />
+	<br />
+	
+	{% for tareas in tareas%}
+    <td>
+        {{ tareas.nombre }}
+        <br />
+    </td>
+{% endfor %}
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+	<form method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="date" name="fecha"><br />
+		<input type="submit">
+		</form>
+</body>
