@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<head>
-
-</head>
-<body>
-	<form method="post">
+{% extends 'base.html' %}
+{% block title %} Agregar Tareas {%endblock%}
+{% block content %}
+	<form class="form-horizontal" method="post">
 		{% csrf_token %}
 		{{form.as_p}}
 		<input type="date" name="fecha"><br />
 		<input type="submit">
 		</form>
-</body>
+{% endblock %}

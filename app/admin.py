@@ -1,10 +1,11 @@
 from django.contrib import admin
 from models import *
+import datetime
 
 from actions import export_as_csv
     
 class TareaAdmin(admin.ModelAdmin):
-    list_display = ('nombre','descripcion','tipo','fecha_rosadita',)
+    list_display = ('nombre','descripcion','tipo','fecha_rosadita','dias',)
     list_filter =('nombre','tipo', 'fecha')
     search_fields = ('nombre',)
     list_editable = ('descripcion','tipo',)
@@ -16,7 +17,12 @@ class TareaAdmin(admin.ModelAdmin):
         url = obj.fecha_rosada()
         tag = '<img src="%s">' % url
         return tag
-    
+
+    def dias(self, obj):
+        dias = obj.dias()
+        tag = '%s' % dias
+        return tag
+        
     
     
     fecha_rosadita.allow_tags = True
