@@ -12,6 +12,7 @@ def home(request):
     template = "index.html" 
     return render_to_response(template)
 
+@login_required(login_url='/ingresar')
 def tareas(request):
     template = "tareas.html"
     try:
@@ -26,12 +27,14 @@ def tareas(request):
     return render_to_response(template)
 
 
+@login_required(login_url='/ingresar')
 def detalle_tarea(request, id_tarea):
     tar = get_object_or_404(Tarea,pk = id_tarea) # esto es para que cuando el usario quiera ver una tarea con un id que no exista le devuelva un error 404
     ctx = {'tarea':tar,}
     template = "detalle_tarea.html"
     return render_to_response(template,ctx,context_instance=RequestContext(request))
 
+@login_required(login_url='/ingresar')
 def eliminar_tarea(request, id_tarea):
     tar = get_object_or_404(Tarea, pk = id_tarea)
     tar.delete()
