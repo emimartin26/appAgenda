@@ -16,7 +16,7 @@ def tareas(request):
     template = "tareas.html"
     try:
         agenda = Agenda.objects.get(user = request.user)   #traigo la agenda perteneciente al usuario logueado
-        tar = agenda.tareas.all()  # traigo las tareas de la agenda perteneciente al usuario.
+        tar = agenda.tareas.order_by("fecha")  # traigo las tareas de la agenda perteneciente al usuario.
      
         ctx = {'agenda':agenda,'tareas':tar, }  
         return render_to_response(template,ctx,context_instance=RequestContext(request))
