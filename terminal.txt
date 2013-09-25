@@ -1,0 +1,355 @@
+2013-09-24T02:52:56.618210+00:00 app[web.1]: 2013-09-24 02:52:56 [2] [INFO] Using worker: sync
+2013-09-24T02:52:56.630793+00:00 app[web.1]: 2013-09-24 02:52:56 [7] [INFO] Booting worker with pid: 7
+2013-09-24T02:52:56.752292+00:00 app[web.1]: 2013-09-24 02:52:56 [7] [ERROR] Exception in worker process:
+2013-09-24T02:52:56.752292+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+2013-09-24T02:52:56.752292+00:00 app[web.1]:     worker.init_process()
+2013-09-24T02:52:56.752292+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+2013-09-24T02:52:56.752292+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2013-09-24T02:52:56.752292+00:00 app[web.1]: Traceback (most recent call last):
+2013-09-24T02:52:56.752292+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+2013-09-24T02:52:56.752292+00:00 app[web.1]:     self.callable = self.load()
+2013-09-24T02:52:56.752292+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+2013-09-24T02:52:56.752292+00:00 app[web.1]:     return self.load_wsgiapp()
+2013-09-24T02:52:56.752689+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+2013-09-24T02:52:56.752689+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2013-09-24T02:52:56.752689+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+2013-09-24T02:52:56.752689+00:00 app[web.1]:     __import__(module)
+2013-09-24T02:52:56.752689+00:00 app[web.1]:   File "/app/agenda/wsgi.py", line 30, in <module>
+2013-09-24T02:52:56.752689+00:00 app[web.1]:     from dj_static import Cling
+2013-09-24T02:52:56.752689+00:00 app[web.1]:     worker.init_process()
+2013-09-24T02:52:56.752924+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+2013-09-24T02:52:56.752924+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2013-09-24T02:52:56.752924+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+2013-09-24T02:52:56.752924+00:00 app[web.1]:     self.callable = self.load()
+2013-09-24T02:52:56.752924+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+2013-09-24T02:52:56.752689+00:00 app[web.1]: ImportError: No module named dj_static
+2013-09-24T02:52:56.752689+00:00 app[web.1]: Traceback (most recent call last):
+2013-09-24T02:52:56.752689+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+2013-09-24T02:52:56.752924+00:00 app[web.1]:     return self.load_wsgiapp()
+2013-09-24T02:52:56.752924+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+2013-09-24T02:52:56.752924+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2013-09-24T02:52:56.752924+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+2013-09-24T02:52:56.752924+00:00 app[web.1]:     __import__(module)
+2013-09-24T02:52:56.753489+00:00 app[web.1]:   File "/app/agenda/wsgi.py", line 30, in <module>
+2013-09-24T02:52:56.753489+00:00 app[web.1]:     from dj_static import Cling
+2013-09-24T02:52:56.753489+00:00 app[web.1]: ImportError: No module named dj_static
+2013-09-24T02:52:56.753489+00:00 app[web.1]: 2013-09-24 02:52:56 [7] [INFO] Worker exiting (pid: 7)
+2013-09-24T02:52:56.886747+00:00 app[web.1]: 2013-09-24 02:52:56 [2] [INFO] Shutting down: Master
+2013-09-24T02:52:56.888612+00:00 app[web.1]: 2013-09-24 02:52:56 [2] [INFO] Reason: Worker failed to boot.
+2013-09-24T02:52:58.403676+00:00 heroku[web.1]: Process exited with status 3
+2013-09-24T02:52:58.418166+00:00 heroku[web.1]: State changed from starting to crashed
+2013-09-24T02:52:58.418166+00:00 heroku[web.1]: State changed from crashed to starting
+2013-09-24T02:53:03.401723+00:00 heroku[web.1]: Starting process with command `gunicorn agenda.wsgi -b 0.0.0:51407`
+2013-09-24T02:53:04.459200+00:00 app[web.1]: 2013-09-24 02:53:04 [2] [INFO] Using worker: sync
+2013-09-24T02:53:04.457020+00:00 app[web.1]: 2013-09-24 02:53:04 [2] [INFO] Starting gunicorn 18.0
+2013-09-24T02:53:04.565675+00:00 app[web.1]: Traceback (most recent call last):
+2013-09-24T02:53:04.565675+00:00 app[web.1]: 2013-09-24 02:53:04 [7] [ERROR] Exception in worker process:
+2013-09-24T02:53:04.459049+00:00 app[web.1]: 2013-09-24 02:53:04 [2] [INFO] Listening at: http://0.0.0.0:51407 (2)
+2013-09-24T02:53:04.466884+00:00 app[web.1]: 2013-09-24 02:53:04 [7] [INFO] Booting worker with pid: 7
+2013-09-24T02:53:04.565675+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+2013-09-24T02:53:04.565675+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+2013-09-24T02:53:04.565675+00:00 app[web.1]:     worker.init_process()
+2013-09-24T02:53:04.565675+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2013-09-24T02:53:04.565675+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+2013-09-24T02:53:04.565675+00:00 app[web.1]:     return self.load_wsgiapp()
+2013-09-24T02:53:04.565867+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+2013-09-24T02:53:04.565867+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+2013-09-24T02:53:04.565867+00:00 app[web.1]:   File "/app/agenda/wsgi.py", line 30, in <module>
+2013-09-24T02:53:04.565867+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2013-09-24T02:53:04.565867+00:00 app[web.1]:     __import__(module)
+2013-09-24T02:53:04.565675+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+2013-09-24T02:53:04.565675+00:00 app[web.1]:     self.callable = self.load()
+2013-09-24T02:53:04.565867+00:00 app[web.1]:     worker.init_process()
+2013-09-24T02:53:04.565867+00:00 app[web.1]: ImportError: No module named dj_static
+2013-09-24T02:53:04.565867+00:00 app[web.1]:     from dj_static import Cling
+2013-09-24T02:53:04.565867+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+2013-09-24T02:53:04.565867+00:00 app[web.1]: Traceback (most recent call last):
+2013-09-24T02:53:04.566020+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+2013-09-24T02:53:04.566020+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+2013-09-24T02:53:04.566020+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2013-09-24T02:53:04.566020+00:00 app[web.1]:     return self.load_wsgiapp()
+2013-09-24T02:53:04.566020+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2013-09-24T02:53:04.566020+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+2013-09-24T02:53:04.566020+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+2013-09-24T02:53:04.566020+00:00 app[web.1]:     self.callable = self.load()
+2013-09-24T02:53:04.566020+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+2013-09-24T02:53:04.566020+00:00 app[web.1]:     __import__(module)
+2013-09-24T02:53:04.566438+00:00 app[web.1]:     from dj_static import Cling
+2013-09-24T02:53:04.566438+00:00 app[web.1]:   File "/app/agenda/wsgi.py", line 30, in <module>
+2013-09-24T02:53:04.566438+00:00 app[web.1]: ImportError: No module named dj_static
+2013-09-24T02:53:04.694077+00:00 app[web.1]: 2013-09-24 02:53:04 [2] [INFO] Shutting down: Master
+2013-09-24T02:53:04.566438+00:00 app[web.1]: 2013-09-24 02:53:04 [7] [INFO] Worker exiting (pid: 7)
+2013-09-24T02:53:04.694077+00:00 app[web.1]: 2013-09-24 02:53:04 [2] [INFO] Reason: Worker failed to boot.
+2013-09-24T02:53:05.905128+00:00 heroku[web.1]: Process exited with status 3
+2013-09-24T02:53:05.917693+00:00 heroku[web.1]: State changed from starting to crashed
+2013-09-24T02:53:11.992322+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=app-agenda.herokuapp.com fwd="190.30.33.70" dyno= connect= service= status=503 bytes=
+2013-09-24T02:53:44.007490+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=app-agenda.herokuapp.com fwd="190.30.33.70" dyno= connect= service= status=503 bytes=
+^C
+ !    Command cancelled.
+emiliano@emiliano-Aspire-5542:~/Django/agenda$ git commit -am 'listo para heroku parte 7'
+[master 0caf1c7] listo para heroku parte 7
+ 1 file changed, 27 insertions(+), 12 deletions(-)
+ rewrite requirements.txt (73%)
+emiliano@emiliano-Aspire-5542:~/Django/agenda$ git push heroku masterCounting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 533 bytes, done.
+Total 3 (delta 1), reused 0 (delta 0)
+
+-----> Python app detected
+-----> No runtime.txt provided; assuming python-2.7.4.
+-----> Using Python runtime (python-2.7.4)
+-----> Installing dependencies using Pip (1.3.1)
+       Downloading/unpacking Pygments==1.6 (from -r requirements.txt (line 3))
+         Running setup.py egg_info for package Pygments
+           
+       Downloading/unpacking South==0.8.2 (from -r requirements.txt (line 4))
+         Running setup.py egg_info for package South
+           
+       Downloading/unpacking amqp==1.0.13 (from -r requirements.txt (line 5))
+         Running setup.py egg_info for package amqp
+           
+       Downloading/unpacking anyjson==0.3.3 (from -r requirements.txt (line 6))
+         Downloading anyjson-0.3.3.tar.gz
+         Running setup.py egg_info for package anyjson
+           
+       Downloading/unpacking billiard==2.7.3.32 (from -r requirements.txt (line 7))
+         Running setup.py egg_info for package billiard
+           
+           warning: no files found matching '*.py' under directory 'Lib'
+       Downloading/unpacking boto==2.12.0 (from -r requirements.txt (line 8))
+         Running setup.py egg_info for package boto
+           
+           warning: no files found matching 'boto/mturk/test/*.doctest'
+           warning: no files found matching 'boto/mturk/test/.gitignore'
+       Downloading/unpacking bpython==0.12 (from -r requirements.txt (line 9))
+         Running setup.py egg_info for package bpython
+           
+           warning: no files found matching 'bpython/translations/*/LC_MESSAGES/bpython.mo'
+       Downloading/unpacking celery==3.0.23 (from -r requirements.txt (line 10))
+         Running setup.py egg_info for package celery
+           Upgrade: no old version found.
+           
+           no previously-included directories found matching '*.pyc'
+           no previously-included directories found matching '*.sw*'
+       Downloading/unpacking celery-with-redis==3.0 (from -r requirements.txt (line 11))
+         Downloading celery-with-redis-3.0.tar.gz
+         Running setup.py egg_info for package celery-with-redis
+           
+       Downloading/unpacking dj-static==0.0.5 (from -r requirements.txt (line 12))
+         Downloading dj-static-0.0.5.tar.gz
+         Running setup.py egg_info for package dj-static
+           
+       Downloading/unpacking django-boto==0.2.1 (from -r requirements.txt (line 13))
+         Downloading django-boto-0.2.1.tar.gz
+         Running setup.py egg_info for package django-boto
+           
+           no previously-included directories found matching '.pypirc'
+       Downloading/unpacking django-celery==3.0.23 (from -r requirements.txt (line 14))
+         Running setup.py egg_info for package django-celery
+           
+           no previously-included directories found matching 'bin/*.pyc'
+           no previously-included directories found matching 'tests/*.pyc'
+           no previously-included directories found matching 'docs/*.pyc'
+           no previously-included directories found matching 'extra/*.pyc'
+           no previously-included directories found matching 'djcelery/*.pyc'
+           no previously-included directories found matching 'docs/.build'
+           no previously-included directories found matching 'examples/*.pyc'
+       Downloading/unpacking django-mockups==0.4.8 (from -r requirements.txt (line 15))
+         Downloading django-mockups-0.4.8.tar.gz
+         Running setup.py egg_info for package django-mockups
+           
+           no previously-included directories found matching 'docs/_build'
+       Downloading/unpacking django-redis-cache==0.10.0 (from -r requirements.txt (line 16))
+         Downloading django-redis-cache-0.10.0.tar.gz
+         Running setup.py egg_info for package django-redis-cache
+           
+       Downloading/unpacking django-storages==1.1.8 (from -r requirements.txt (line 17))
+         Downloading django-storages-1.1.8.tar.gz
+         Running setup.py egg_info for package django-storages
+           
+       Downloading/unpacking djangorestframework==2.3.7 (from -r requirements.txt (line 18))
+         Running setup.py egg_info for package djangorestframework
+           
+       Downloading/unpacking hiredis==0.1.1 (from -r requirements.txt (line 20))
+         Downloading hiredis-0.1.1.tar.gz
+         Running setup.py egg_info for package hiredis
+           
+       Downloading/unpacking kombu==2.5.14 (from -r requirements.txt (line 21))
+         Running setup.py egg_info for package kombu
+           
+       Downloading/unpacking python-dateutil==2.1 (from -r requirements.txt (line 22))
+         Running setup.py egg_info for package python-dateutil
+           
+       Downloading/unpacking pytz==2013d (from -r requirements.txt (line 23))
+         Running setup.py egg_info for package pytz
+           
+           warning: no files found matching '*.pot' under directory 'pytz'
+       Downloading/unpacking six==1.4.1 (from -r requirements.txt (line 25))
+         Downloading six-1.4.1.tar.gz
+         Running setup.py egg_info for package six
+           
+       Downloading/unpacking static==0.4 (from -r requirements.txt (line 26))
+         Downloading static-0.4.tar.gz
+         Running setup.py egg_info for package static
+           
+       Installing collected packages: Pygments, South, amqp, anyjson, billiard, boto, bpython, celery, celery-with-redis, dj-static, django-boto, django-celery, django-mockups, django-redis-cache, django-storages, djangorestframework, hiredis, kombu, python-dateutil, pytz, six, static
+         Running setup.py install for Pygments
+           
+           Installing pygmentize script to /app/.heroku/python/bin
+         Running setup.py install for South
+           
+         Running setup.py install for amqp
+           
+         Running setup.py install for anyjson
+           
+         Running setup.py install for billiard
+           building '_billiard' extension
+           gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DHAVE_SEM_OPEN=1 -DHAVE_FD_TRANSFER=1 -DHAVE_SEM_TIMEDWAIT=1 -IModules/_billiard -I/app/.heroku/python/include/python2.7 -c Modules/_billiard/multiprocessing.c -o build/temp.linux-x86_64-2.7/Modules/_billiard/multiprocessing.o
+           gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DHAVE_SEM_OPEN=1 -DHAVE_FD_TRANSFER=1 -DHAVE_SEM_TIMEDWAIT=1 -IModules/_billiard -I/app/.heroku/python/include/python2.7 -c Modules/_billiard/socket_connection.c -o build/temp.linux-x86_64-2.7/Modules/_billiard/socket_connection.o
+           In file included from Modules/_billiard/socket_connection.c:229:
+           Modules/_billiard/connection.h: In function ‘Billiard_connection_recv_payload’:
+           Modules/_billiard/connection.h:387: warning: unused variable ‘result’
+           gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DHAVE_SEM_OPEN=1 -DHAVE_FD_TRANSFER=1 -DHAVE_SEM_TIMEDWAIT=1 -IModules/_billiard -I/app/.heroku/python/include/python2.7 -c Modules/_billiard/semaphore.c -o build/temp.linux-x86_64-2.7/Modules/_billiard/semaphore.o
+           gcc -pthread -shared build/temp.linux-x86_64-2.7/Modules/_billiard/multiprocessing.o build/temp.linux-x86_64-2.7/Modules/_billiard/socket_connection.o build/temp.linux-x86_64-2.7/Modules/_billiard/semaphore.o -lrt -o build/lib.linux-x86_64-2.7/_billiard.so
+           
+           warning: no files found matching '*.py' under directory 'Lib'
+         Running setup.py install for boto
+           
+           warning: no files found matching 'boto/mturk/test/*.doctest'
+           warning: no files found matching 'boto/mturk/test/.gitignore'
+           changing mode of build/scripts-2.7/sdbadmin from 600 to 755
+           changing mode of build/scripts-2.7/elbadmin from 600 to 755
+           changing mode of build/scripts-2.7/cfadmin from 600 to 755
+           changing mode of build/scripts-2.7/s3put from 600 to 755
+           changing mode of build/scripts-2.7/fetch_file from 600 to 755
+           changing mode of build/scripts-2.7/launch_instance from 600 to 755
+           changing mode of build/scripts-2.7/list_instances from 600 to 755
+           changing mode of build/scripts-2.7/taskadmin from 600 to 755
+           changing mode of build/scripts-2.7/kill_instance from 600 to 755
+           changing mode of build/scripts-2.7/bundle_image from 600 to 755
+           changing mode of build/scripts-2.7/pyami_sendmail from 600 to 755
+           changing mode of build/scripts-2.7/lss3 from 600 to 755
+           changing mode of build/scripts-2.7/cq from 600 to 755
+           changing mode of build/scripts-2.7/route53 from 600 to 755
+           changing mode of build/scripts-2.7/cwutil from 600 to 755
+           changing mode of build/scripts-2.7/instance_events from 600 to 755
+           changing mode of build/scripts-2.7/asadmin from 600 to 755
+           changing mode of build/scripts-2.7/glacier from 600 to 755
+           changing mode of build/scripts-2.7/mturk from 600 to 755
+           changing mode of build/scripts-2.7/dynamodb_dump from 600 to 755
+           changing mode of build/scripts-2.7/dynamodb_load from 600 to 755
+           changing mode of /app/.heroku/python/bin/instance_events to 755
+           changing mode of /app/.heroku/python/bin/list_instances to 755
+           changing mode of /app/.heroku/python/bin/cfadmin to 755
+           changing mode of /app/.heroku/python/bin/fetch_file to 755
+           changing mode of /app/.heroku/python/bin/taskadmin to 755
+           changing mode of /app/.heroku/python/bin/kill_instance to 755
+           changing mode of /app/.heroku/python/bin/bundle_image to 755
+           changing mode of /app/.heroku/python/bin/s3put to 755
+           changing mode of /app/.heroku/python/bin/asadmin to 755
+           changing mode of /app/.heroku/python/bin/sdbadmin to 755
+           changing mode of /app/.heroku/python/bin/cwutil to 755
+           changing mode of /app/.heroku/python/bin/pyami_sendmail to 755
+           changing mode of /app/.heroku/python/bin/route53 to 755
+           changing mode of /app/.heroku/python/bin/dynamodb_load to 755
+           changing mode of /app/.heroku/python/bin/elbadmin to 755
+           changing mode of /app/.heroku/python/bin/dynamodb_dump to 755
+           changing mode of /app/.heroku/python/bin/launch_instance to 755
+           changing mode of /app/.heroku/python/bin/lss3 to 755
+           changing mode of /app/.heroku/python/bin/cq to 755
+           changing mode of /app/.heroku/python/bin/mturk to 755
+           changing mode of /app/.heroku/python/bin/glacier to 755
+         Running setup.py install for bpython
+           
+           warning: no files found matching 'bpython/translations/*/LC_MESSAGES/bpython.mo'
+           Installing bpython-urwid script to /app/.heroku/python/bin
+           Installing bpython script to /app/.heroku/python/bin
+           Installing bpython-gtk script to /app/.heroku/python/bin
+         Running setup.py install for celery
+           Upgrade: no old version found.
+           
+           no previously-included directories found matching '*.pyc'
+           no previously-included directories found matching '*.sw*'
+           Installing celeryctl script to /app/.heroku/python/bin
+           Installing celeryd script to /app/.heroku/python/bin
+           Installing camqadm script to /app/.heroku/python/bin
+           Installing celeryev script to /app/.heroku/python/bin
+           Installing celery script to /app/.heroku/python/bin
+           Installing celeryd-multi script to /app/.heroku/python/bin
+           Installing celerybeat script to /app/.heroku/python/bin
+         Running setup.py install for celery-with-redis
+           
+         Running setup.py install for dj-static
+           
+         Running setup.py install for django-boto
+           
+           no previously-included directories found matching '.pypirc'
+         Running setup.py install for django-celery
+           changing mode of build/scripts-2.7/djcelerymon from 600 to 755
+           
+           no previously-included directories found matching 'bin/*.pyc'
+           no previously-included directories found matching 'tests/*.pyc'
+           no previously-included directories found matching 'docs/*.pyc'
+           no previously-included directories found matching 'extra/*.pyc'
+           no previously-included directories found matching 'djcelery/*.pyc'
+           no previously-included directories found matching 'docs/.build'
+           no previously-included directories found matching 'examples/*.pyc'
+           changing mode of /app/.heroku/python/bin/djcelerymon to 755
+           Installing djcelerymon script to /app/.heroku/python/bin
+         Running setup.py install for django-mockups
+           
+           no previously-included directories found matching 'docs/_build'
+         Running setup.py install for django-redis-cache
+           
+         Running setup.py install for django-storages
+           
+         Running setup.py install for djangorestframework
+           
+         Running setup.py install for hiredis
+           building 'hiredis' library
+           gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Ivendor/hiredis -c vendor/hiredis/hiredis.c -o build/temp.linux-x86_64-2.7/vendor/hiredis/hiredis.o
+           gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Ivendor/hiredis -c vendor/hiredis/net.c -o build/temp.linux-x86_64-2.7/vendor/hiredis/net.o
+           gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Ivendor/hiredis -c vendor/hiredis/sds.c -o build/temp.linux-x86_64-2.7/vendor/hiredis/sds.o
+           ar rc build/temp.linux-x86_64-2.7/libhiredis.a build/temp.linux-x86_64-2.7/vendor/hiredis/hiredis.o build/temp.linux-x86_64-2.7/vendor/hiredis/net.o build/temp.linux-x86_64-2.7/vendor/hiredis/sds.o
+           building 'hiredis.hiredis' extension
+           gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Isrc -Ivendor -I/app/.heroku/python/include/python2.7 -c src/reader.c -o build/temp.linux-x86_64-2.7/src/reader.o
+           In file included from /app/.heroku/python/include/python2.7/Python.h:8,
+                            from src/hiredis.h:4,
+                            from src/reader.h:4,
+                            from src/reader.c:2:
+           /app/.heroku/python/include/python2.7/pyconfig.h:1173:1: warning: "_POSIX_C_SOURCE" redefined
+           In file included from /usr/include/assert.h:37,
+                            from src/reader.c:1:
+           /usr/include/features.h:210:1: warning: this is the location of the previous definition
+           gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Isrc -Ivendor -I/app/.heroku/python/include/python2.7 -c src/hiredis.c -o build/temp.linux-x86_64-2.7/src/hiredis.o
+           gcc -pthread -shared build/temp.linux-x86_64-2.7/src/reader.o build/temp.linux-x86_64-2.7/src/hiredis.o -Lbuild/temp.linux-x86_64-2.7 -lhiredis -lhiredis -o build/lib.linux-x86_64-2.7/hiredis/hiredis.so
+           
+         Running setup.py install for kombu
+           
+         Running setup.py install for python-dateutil
+           
+         Running setup.py install for pytz
+           
+           warning: no files found matching '*.pot' under directory 'pytz'
+         Running setup.py install for six
+           
+         Running setup.py install for static
+           
+           Installing static script to /app/.heroku/python/bin
+       Successfully installed Pygments South amqp anyjson billiard boto bpython celery celery-with-redis dj-static django-boto django-celery django-mockups django-redis-cache django-storages djangorestframework hiredis kombu python-dateutil pytz six static
+       Cleaning up...
+-----> Collecting static files
+       80 static files copied.
+
+-----> Discovering process types
+       Procfile declares types -> web
+
+-----> Compiled slug size: 43.3MB
+-----> Launching... done, v7
+       http://app-agenda.herokuapp.com deployed to Heroku
+
+To git@heroku.com:app-agenda.git
+   cf290d9..0caf1c7  master -> master
+emiliano@emiliano-Aspire-5542:~/Django/agenda$ 
+

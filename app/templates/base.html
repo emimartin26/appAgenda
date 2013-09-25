@@ -31,9 +31,9 @@
 			<li><a href="/tareas">Tareas</a></li>
 			<li><a href="/addtarea">Agregar Tareas</a></li>
 			{% if user.is_authenticated %}
-			<li><a href="#">Cerrar Sesion</a></li>
+			<li><a href="/cerrar">Cerrar Sesion</a></li>
 			{% else %}
-			<li><a href="#">Login</a></li>
+			<li><a href="/ingresar">Ingresar</a></li>
 			{% endif %}
 		</ul>
 	</div> <!--/inner-->

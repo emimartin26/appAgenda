@@ -1,16 +1,17 @@
 from django.shortcuts import render_to_response,get_object_or_404
 from django.template.context import RequestContext
 from models import *
-from forms import AgendaForm, TareaForm
+from forms import AgendaForm, TareaForm , LoginForm
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 
+from django.contrib.auth import login, authenticate, logout
 
 
 def home(request):
     template = "index.html" 
-    return render_to_response(template)
+    return render_to_response(template, context_instance=RequestContext(request))
 
 @login_required(login_url='/ingresar')
 def tareas(request):
@@ -81,4 +82,33 @@ def ingresar(request):
 def logueo(request):
     template ="error.html"
     return render_to_response(template,context_instance=RequestContext(request,locals()))
-    
+
+from django.contrib.auth import login as auth_login
+
+def ingresar(request):
+    mensaje = ""
+    template = "login.html"
+    if request.user.is_authenticated():
+        return HttpResponseRedirect("/")
+    else:
+        if request.method == "POST":
+            form = LoginForm(request.POST)
+            if form.is_valid():                
+                username = form.cleaned_data['username']
+                password = form.cleaned_data['password']             
+                usuario = authenticate(username = username , password= password)                
+                if usuario is not None and usuario.is_active:
+                    login(request, usuario)
+                    return HttpResponseRedirect("/")
+                else:
+                    mensaje = "Usuario y/o password incorrecto"
+            else:
+               mensaje = "Usuario y/o password incorrecto"     
+        form = LoginForm()
+        ctx = {'form':form, 'mensaje': mensaje}
+        return render_to_response(template,ctx,context_instance= RequestContext(request))
+
+@login_required(login_url = "/login")
+def cerrar(request):
+    logout(request)
+    return HttpResponseRedirect("/")
