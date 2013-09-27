@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
 {% block title %} Agregar Tareas {%endblock%}
 {% block content %}
-	<form class="form-horizontal" method="post">
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  
+ <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+     $( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+  });
+  </script>
+	<form class="form-horizontal"  method="post">
 		{% csrf_token %}
 		{{form.as_p}}
-		<input type="date" name="fecha"><br />
+		<input type="text" name="fecha" id="datepicker"><br />
 		<input type="submit">
-		</form>
+	</form>
 {% endblock %}

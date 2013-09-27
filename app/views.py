@@ -83,7 +83,6 @@ def logueo(request):
     template ="error.html"
     return render_to_response(template,context_instance=RequestContext(request,locals()))
 
-from django.contrib.auth import login as auth_login
 
 def ingresar(request):
     mensaje = ""
