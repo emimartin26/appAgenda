@@ -28,8 +28,8 @@ from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
 
 # para subirlo a heroku activar estas lineas
-#from dj_static import Cling
-#application = Cling(get_wsgi_application())
+from dj_static import Cling
+application = Cling(get_wsgi_application())
 
 
 # Apply WSGI middleware here.
