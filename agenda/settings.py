@@ -174,11 +174,13 @@ LOGGING = {
 }
 
 
-
+'''
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'app.context_processors.ultimas',
     'app.context_processors.tareas_hoy',
 )
+'''
+
 
