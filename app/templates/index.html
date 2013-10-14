@@ -6,7 +6,7 @@
 {% block content %}
 {% if user.is_authenticated %}
 <p>
-	Bienvenido {{user|upper}}, la ultima vez que te vimos por aqui fue el {{user.last_login|date:"d M Y"}}.
+	Bienvenido {{user|upper}}, la ultima vez que te vimos por aqui fue el {{user.last_login}}.
 </p>
 <p>
 	Eres miembro desde el {{user.date_joined}}
