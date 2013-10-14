@@ -20,23 +20,34 @@
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="navbar-inner">
-		<a class="brand" href="/">Agenda 2.0</a>
-		{% if user.is_authenticated %}
-				<p class="navbar-text pull-right">
-					Usuario {{user.username}}
-				</p>
-		{% endif %}
-		<ul class="nav">
-			<li><a href="/tareas">Tareas</a></li>
-			<li><a href="/addtarea">Agregar Tareas</a></li>
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="{% url "home" %}">Mi Simple Agenda</a>
+          <div class="nav-collapse collapse">
+          {% if user.is_authenticated %}
+            <p class="navbar-text pull-right">
+              Usuario: <a href="#" class="navbar-link">{{user.username}}</a>
+            </p>
+            {% else %}
+            	<p class="navbar-text pull-right">
+              Usuario: <a href="#" class="navbar-link">Anonimo</a>
+            </p>
+            {% endif %}
+          	<ul class="nav">
+			<li><a href="{% url "tareas" %}">Tareas</a></li>
+			<li><a href="{% url "addtarea" %}">Agregar Tareas</a></li>
 			{% if user.is_authenticated %}
 			<li><a href="/cerrar">Cerrar Sesion</a></li>
 			{% else %}
 			<li><a href="/ingresar">Ingresar</a></li>
 			{% endif %}
 		</ul>
-	</div> <!--/inner-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+
 </div><!--/navbar-->
 
 <div class="container-fluid">
@@ -49,30 +60,39 @@
 		</div>
 		<div class="span3">
 			<div class="well sidebar-nav">
-				<ul class="nav nav-list">
-					<li class="nav-header">Ultimas Tareas</li>
+			<ul class="nav nav-list">
+					<li class="nav-header">Tareas Para Hoy</li>
 					<br>
 					<p align="justify">
-					Proximas Tareas
-					</p>
-				</ul>
+					<ul class="nav nav-pills nav-stacked">
+					{% for t in hoy %}
+						<li><h4>{{t.nombre}}</h4></li>					
+					{% endfor %}
+					</ul>
 			</div><!--/well-->
 		</div><!--/span3-->
-				<div class="span3">
+		<div class="span3">
 			<div class="well sidebar-nav">
 				<ul class="nav nav-list">
-					<li class="nav-header">Ultimas Tareas</li>
+					<li class="nav-header">Proximas Tareas</li>
 					<br>
 					<p align="justify">
-					Proximas Tareas
+					<ul class="nav nav-pills nav-stacked">
+					{% for t in ultimas %}
+						<li><h4>{{t.nombre}}</h4></li>					
+					{% endfor %}
+					</ul>
 					</p>
 				</ul>
 			</div><!--/well-->
 		</div><!--/span3-->
 	</div>
 </div>
-
-
+<div id="footer">
+      <div class="container">
+        <p class="muted credit">Proyecto Libre Desarrollado Por <a target="black" href="https://twitter.com/emimartin26">Emiliano Martin</a>.</p>
+      </div>
+    </div>
 </body>
 
 

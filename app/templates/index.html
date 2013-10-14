@@ -4,6 +4,16 @@
 
 
 {% block content %}
-
-<h1> Comiense a utilizar agenda 2.0 </h1> 
+{% if user.is_authenticated %}
+<p>
+	Bienvenido {{user|upper}}, la ultima vez que te vimos por aqui fue el {{user.last_login|date:"d M Y"}}.
+</p>
+<p>
+	Eres miembro desde el {{user.date_joined}}
+</p>
+{% else %}
+<p>
+	Bienvenido Usuario Anonimo, estamos en contruccion de esta aplicacion.
+</p>
+{% endif %}
 {% endblock %}
