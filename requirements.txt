@@ -30,4 +30,3 @@ psycopg2==2.5
 
 
 dj-database-url==0.2.1
-static==0.4
