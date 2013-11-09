@@ -24,7 +24,6 @@ def tareas(request):
             print tipo_tarea
             if tipo_tarea == '-1':
                  tar = agenda.tareas.order_by("fecha")
-                 print 'estoy aca'
             else:
                 tar_tipo = agenda.tareas.filter(tipo = tipo_tarea)
                 tar = tar_tipo.order_by("fecha")
